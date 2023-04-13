@@ -1,0 +1,47 @@
+# Informações do cliente
+nome_cliente = "João da Silva"
+endereco_cliente = "Rua das Flores, 123"
+cpf_cliente = "123.456.789-10"
+
+# Informações dos itens comprados
+itens_comprados = [
+  { descricao: "Camiseta", quantidade: 2, preco_unitario: 29.99 },
+  { descricao: "Calça jeans", quantidade: 1, preco_unitario: 99.99 },
+  { descricao: "Tênis", quantidade: 1, preco_unitario: 79.99 }
+]
+
+# Cálculo do total da compra
+total = 0
+itens_comprados.each do |item|
+  total += item[:quantidade] * item[:preco_unitario]
+end
+
+# Impressão da nota fiscal
+puts "NOTA FISCAL\n\n"
+puts "Cliente: #{nome_cliente}"
+puts "Endereço: #{endereco_cliente}"
+puts "CPF: #{cpf_cliente}"
+puts "\n"
+puts "Itens comprados:\n"
+itens_comprados.each do |item|
+  puts "#{item[:descricao]} - #{item[:quantidade]} x #{item[:preco_unitario]} = #{item[:quantidade] * item[:preco_unitario]}"
+end
+puts "\n"
+puts "Total: R$ #{'%.2f' % total}"#assim o valor so vai ter 2 numeros apos a virgula
+
+
+
+# Esse foi o resultado
+
+# NOTA FISCAL
+
+# Cliente: João da Silva
+# Endereço: Rua das Flores, 123
+# CPF: 123.456.789-10
+
+# Itens comprados:
+# Camiseta - 2 x 29.99 = 59.98
+# Calça jeans - 1 x 99.99 = 99.99
+# Tênis - 1 x 79.99 = 79.99
+
+# Total: R$ 239.95
